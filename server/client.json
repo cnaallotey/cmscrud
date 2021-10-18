@@ -1,0 +1,5 @@
+[{
+  "Name":{"firstName":"John", "lastName":"Doe"}, "email":"jane.cooper@example.com", "department":"Human resource", "role":"talent scout", "status":"active", "id": "76"},
+  {
+  "Name":{"firstName":"John", "lastName":"Doe"}, "email":"doe@gmail.com", "department":"Human resource", "role":"talent scout", "status":"active" , "id": "82"}
+]

@@ -40,7 +40,7 @@ app.use('/', serveStatic(path.join(__dirname, 'dist')))
 
 
 
-const port =  39000
+const port = process.env.PORT || 39000;
 
 app.listen(port, ()=> {
     console.log(`App is running on ${port}`);

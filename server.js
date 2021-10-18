@@ -36,7 +36,7 @@ const updateRoutes = require('./server/puts')
 app.use('/', updateRoutes)
 
 
-app.use('/', serveStatic(path.join(__dirname, '/public/')))
+app.use('/', serveStatic(path.join(__dirname, 'dist')))
 
 
 

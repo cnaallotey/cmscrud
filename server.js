@@ -1,6 +1,5 @@
 //installing Dependencies
 const express = require('express')
-const bodyParser = require('body-parser')
 const serveStatic = require('serve-static')
 const cors = require('cors')
 
@@ -16,8 +15,8 @@ const app = express()
 app.use(cors())
 
 //configuring body parser middle ware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //import get routes
 const getRoutes = require('./server/gets')
@@ -37,11 +36,11 @@ const updateRoutes = require('./server/puts')
 app.use('/', updateRoutes)
 
 
-app.use('/', serveStatic(path.join(__dirname, '/public')))
+app.use('/', serveStatic(path.join(__dirname, '/public/')))
 
 
 
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 
 app.listen(port, ()=> {
     console.log(`App is running on ${port}`);

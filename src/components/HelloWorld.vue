@@ -291,7 +291,7 @@ export default {
         this.error = true;
       } else {
         axios
-          .post("http://localhost:34638/client", {
+          .post("http://localhost:29409/client", {
             Name: { firstName: this.firstName, lastName: this.lastName },
             department: this.department,
             email: this.email,
@@ -328,7 +328,7 @@ export default {
 
     editClient: function (clientId) {
       axios
-        .get("http://localhost:34638/client/editclient/" + clientId)
+        .get("http://localhost:29409/client/editclient/" + clientId)
         .then((response) => {
           console.log(response.data);
           const update = response.data;
@@ -346,7 +346,7 @@ export default {
       // this.employees = this.employees.filter((item) => item.id !== employee.id);
     },
     updateClient: function () {
-      axios.put("http://localhost:34638/client/updateclient/" + this.id, {
+      axios.put("http://localhost:29409/client/updateclient/" + this.id, {
         firstName: this.firstName,
         lastName: this.lastName,
         role: this.role,
@@ -360,7 +360,7 @@ export default {
     },
     toggleEditModal: function () {},
     deleteClient: function (clientId) {
-      axios.delete("http://localhost:34638/client/" + clientId).then((response) => {
+      axios.delete("http://localhost:29409/client/" + clientId).then((response) => {
         console.log(response.data);
         location.reload();
       });
@@ -386,7 +386,7 @@ export default {
   mounted() {
     axios
       //load all employees
-      .get("http://localhost:34638/loadclient")
+      .get("http://localhost:29409/loadclient")
       .then((res) => (this.employees = res.data))
       .catch((err) => console.log(err));
   },

@@ -30,7 +30,6 @@ app.use('/', postRoutes)
 const deleteRoutes = require('./server/deletes')
 app.use('/', deleteRoutes)
 
-
 //importing put routes
 const updateRoutes = require('./server/puts')
 app.use('/', updateRoutes)

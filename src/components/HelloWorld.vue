@@ -293,7 +293,11 @@ export default {
         this.error = true;
       } else {
         axios
+<<<<<<< HEAD
           .post("http://localhost:3000/client", {
+=======
+          .post("http://localhost:29409/client", {
+>>>>>>> 29f7671b419db7063ec9f00cb7bf377e53758d17
             Name: { firstName: this.firstName, lastName: this.lastName },
             department: this.department,
             email: this.email,
@@ -330,7 +334,11 @@ export default {
 
     editClient: function (clientId) {
       axios
+<<<<<<< HEAD
         .get("http://localhost:3000/client/editclient/" + clientId)
+=======
+        .get("http://localhost:29409/client/editclient/" + clientId)
+>>>>>>> 29f7671b419db7063ec9f00cb7bf377e53758d17
         .then((response) => {
           console.log(response.data);
           const update = response.data;
@@ -348,7 +356,11 @@ export default {
       // this.employees = this.employees.filter((item) => item.id !== employee.id);
     },
     updateClient: function () {
+<<<<<<< HEAD
       axios.put("http://localhost:3000/client/updateclient/" + this.id, {
+=======
+      axios.put("http://localhost:29409/client/updateclient/" + this.id, {
+>>>>>>> 29f7671b419db7063ec9f00cb7bf377e53758d17
         firstName: this.firstName,
         lastName: this.lastName,
         role: this.role,
@@ -362,7 +374,11 @@ export default {
     },
     toggleEditModal: function () {},
     deleteClient: function (clientId) {
+<<<<<<< HEAD
       axios.delete("http://localhost:3000/client/" + clientId).then((response) => {
+=======
+      axios.delete("http://localhost:29409/client/" + clientId).then((response) => {
+>>>>>>> 29f7671b419db7063ec9f00cb7bf377e53758d17
         console.log(response.data);
         location.reload();
       });
@@ -388,7 +404,11 @@ export default {
   mounted() {
     axios
       //load all employees
+<<<<<<< HEAD
       .get("http://localhost:3000/loadclient")
+=======
+      .get("http://localhost:29409/loadclient")
+>>>>>>> 29f7671b419db7063ec9f00cb7bf377e53758d17
       .then((res) => (this.employees = res.data))
       .catch((err) => console.log(err));
   },

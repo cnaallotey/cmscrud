@@ -22,10 +22,10 @@
         </div>
       </div>
 
-      <div class="w-full bg-white p-10 flex space-x-10">
+      <div class="w-full bg-white p-10 flex space-x-10 shadow-lg">
         <div class="relative">
           <select
-            class="appearance-none h-full rounded-r border sm:rounded-r-none block w-full bg-gray-300 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-r focus:border-gray-500"
+            class="appearance-none h-full rounded-r border sm:rounded-r-none block w-full rounded-md  bg-gray-300 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-r focus:border-gray-500"
           >
             <option>All</option>
             <option>Active</option>
@@ -66,10 +66,13 @@
           />
         </div>
         <button
-          class="bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
+          class="bg-blue-600 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded flex items-center uppercase hover:shadow-md"
           @click="newClient()"
         >
           Add new client
+          <span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+</svg></span>
         </button>
       </div>
       <!-- This example requires Tailwind CSS v2.0+ -->
@@ -123,7 +126,7 @@
                         <div class="flex-shrink-0 h-10 w-10">
                           <img
                             class="h-10 w-10 rounded-full"
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                            src="../assets/user.svg"
                             alt=""
                           />
                         </div>
@@ -158,7 +161,7 @@
                         class="text-green-600 hover:text-green-900 mr-5"
                         
                         >Edit</a-->
-
+                     <div class="flex flex-row items-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-6 w-6 text-green-600 hover:text-green-900 mr-5"
@@ -188,7 +191,7 @@
                           stroke-width="2"
                           d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                         />
-                      </svg>
+                      </svg></div>
                       <!-- <a href="#" class="text-red-600 hover:text-indigo-900"
                         >Delete Client</a
                       >-->
@@ -237,8 +240,7 @@
             
 
           ></editmodal>
-          <p>{{ id }}</p>
-        </div>
+          </div>
       </div>
     </div>
   </div>

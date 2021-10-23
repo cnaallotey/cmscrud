@@ -202,7 +202,10 @@
                 </tbody>
               </table>
             </div>
+             <div class="mt-20 flex flex-1 justify-center flex-col items-center" v-if="this.employees.length===0"><img src="../assets/nodata.gif" class="w-64" alt=""><h1 class="text-2xl font-bold mt-5 tracking-wide">No data to Display</h1>
+             <p class="font-medium text-sm text-gray-500 tracking-tight">Please add a client</p></div>
           </div>
+         
           
           <modal
             v-if="showmodal"
@@ -261,6 +264,7 @@ export default {
       // year: "",
       // car: "",
       // cars: ["toyota", "hyundai", "mazda"],
+      //http://localhost:3000
      
       showmodal: false,
       editmodal: false,

@@ -4,7 +4,7 @@
     <div class="bg-gray-200 w-full space-y-10 max-w-screen-xl mx-auto">
    
 
-      <div class="flex justify-between overflow-hidden p-5 md:pl-0 md:pr-0">
+      <div class="flex justify-between overflow-hidden p-5 md:pl-5 lg:pl-0 md:pr-0">
         <div class=" overflow-hidden ">
           <h1 class="text-3xl font-semibold">Admin Dashboard</h1>
         </div>

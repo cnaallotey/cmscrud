@@ -3,7 +3,7 @@
   <section class="relative mx-auto">
       <!-- navbar -->
     <nav class="flex justify-between bg-gray-900 text-white">
-      <div class="px-5 md:px-0 xl:px-0 py-6 flex w-full items-center max-w-screen-xl mx-auto">
+      <div class="px-5 md:px-5 xl:px-0 py-6 flex w-full items-center max-w-screen-xl mx-auto">
         <a class="text-3xl font-bold font-heading" href="#">
           <!-- <img class="h-9" src="logo.png" alt="logo"> -->
           CMS.

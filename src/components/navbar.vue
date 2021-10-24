@@ -6,7 +6,7 @@
       <div class="px-5 md:px-0 xl:px-0 py-6 flex w-full items-center max-w-screen-xl mx-auto">
         <a class="text-3xl font-bold font-heading" href="#">
           <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-          Logo Here.
+          CMS.
         </a>
         <!-- Nav Links --> 
         <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">

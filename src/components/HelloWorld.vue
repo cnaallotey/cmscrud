@@ -4,7 +4,7 @@
     <div class="bg-gray-200 w-full space-y-10 max-w-screen-xl mx-auto">
    
 
-      <div class="flex justify-between overflow-hidden p-5 md:pl-5 lg:pl-0 md:pr-0">
+      <div class="flex justify-between overflow-hidden p-5 py-0 md:pl-5 lg:pl-0 md:pr-0">
         <div class=" overflow-hidden ">
           <h1 class="text-3xl font-semibold">Admin Dashboard</h1>
         </div>
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div class="w-full bg-white p-5 py-10 md:p-10 flex space-y-5 shadow-lg flex-col md:flex-row md:space-y-0 md md:space-x-5">
+      <div class="w-full bg-white p-5 py-5 md:py-10 md:p-10 flex space-y-5 shadow-lg flex-col md:flex-row md:space-y-0 md md:space-x-5">
         <div class="relative">
           <select
             class="appearance-none h-full rounded-r border sm:rounded-r-none block w-full  bg-gray-300 text-gray-700 py-4 px-4 pr-8 leading-tight focus:outline-none focus:border-r focus:border-gray-500"

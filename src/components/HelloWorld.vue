@@ -1,38 +1,31 @@
 <template>
-  <div class="flex">
-    <div class="w-96 h-screen bg-blue-900"><sidebar></sidebar></div>
-    <div class="bg-gray-200 w-full h-screen p-10 space-y-10 overflow-y-scroll">
-      <div class="flex flex-wrap overflow-hidden">
-        <div class="w-1/2 overflow-hidden">
-          <h1 class="text-3xl font-regular">Admin Dashboard</h1>
+  <div class=" bg-gray-200 space-y-10 h-screen overflow-scroll pb-20">
+    <navbar></navbar>
+    <div class="bg-gray-200 w-full space-y-10 max-w-screen-xl mx-auto">
+   
+
+      <div class="flex justify-between overflow-hidden p-5 md:pl-0 md:pr-0">
+        <div class=" overflow-hidden ">
+          <h1 class="text-3xl font-semibold">Admin Dashboard</h1>
         </div>
 
         <div class="w-1/2 overflow-hidden flex justify-end">
-          <div></div>
-          <div class="flex items-center space-x-3 border-l-2 border-gray-500 pl-5">
-            <h1 class="font-medium text-gray-500 text-sm">charlesallotey@gmail.com</h1>
-            <div class="flex-shrink-0 h-10 w-10">
-              <img
-                class="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
-                alt=""
-              />
-            </div>
-          </div>
+          
+          
         </div>
       </div>
 
-      <div class="w-full bg-white p-10 flex space-x-10 shadow-lg">
+      <div class="w-full bg-white p-5 py-10 md:p-10 flex space-y-5 shadow-lg flex-col md:flex-row md:space-y-0 md md:space-x-5">
         <div class="relative">
           <select
-            class="appearance-none h-full rounded-r border sm:rounded-r-none block w-full rounded-md  bg-gray-300 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-r focus:border-gray-500"
+            class="appearance-none h-full rounded-r border sm:rounded-r-none block w-full  bg-gray-300 text-gray-700 py-4 px-4 pr-8 leading-tight focus:outline-none focus:border-r focus:border-gray-500"
           >
             <option>All</option>
             <option>Active</option>
             <option>Inactive</option>
           </select>
           <div
-            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 py-4 text-gray-700"
           >
             <svg
               class="fill-current h-4 w-4"
@@ -45,7 +38,7 @@
             </svg>
           </div>
         </div>
-        <div class="flex flex-1 border rounded bg-gray-300 items-center p-2">
+        <div class="flex flex-1 border bg-gray-300 items-center p-2 py-4">
           <svg
             class="fill-current text-gray-800 mr-2 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -60,16 +53,16 @@
           </svg>
           <input
             type="text"
-            placeholder="Search clients"
+            placeholder="Search users"
             class="bg-gray-300 max-w-full focus:outline-none text-gray-700"
             v-model="search"
           />
         </div>
         <button
-          class="bg-blue-600 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded flex items-center uppercase hover:shadow-md"
+          class="bg-blue-600 hover:bg-blue-800 text-white font-medium py-4 px-4 flex items-center justify-center hover:shadow-md"
           @click="newClient()"
         >
-          Add new client
+          Add new user
           <span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
 </svg></span>
@@ -85,21 +78,15 @@
                   <tr>
                     <th
                       scope="col"
-                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      class="px-6 md:px-10 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
                       Name
                     </th>
                     <th
                       scope="col"
-                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      class=" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Title
-                    </th>
-                    <th
-                      scope="col"
-                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      Status
+                      Department
                     </th>
                     <th
                       scope="col"
@@ -107,6 +94,13 @@
                     >
                       Role
                     </th>
+                    <th
+                      scope="col"
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Status
+                    </th>
+                    
                     <th
                       scope="col"
                       class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -130,7 +124,7 @@
                             alt=""
                           />
                         </div>
-                        <div class="ml-4">
+                        <div class="ml-4 md:ml-10">
                           <div class="text-sm font-medium text-gray-900">
                             <span>{{ employee.Name.firstName }}</span>
                             {{ employee.Name.lastName }}
@@ -141,10 +135,13 @@
                     </td>
                     <t d class="px-6 py-4 whitespace-nowrap">
                       <div class="text-sm font-medium text-gray-900">
-                        {{ employee.role }}
+                        {{ employee.department }}
                       </div>
-                      <div class="text-sm text-gray-500">{{ employee.department }}</div>
+                      <div class="text-sm text-gray-500"></div>
                     </t>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                     {{ employee.role }}
+                    </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                       <span
                         class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
@@ -152,9 +149,7 @@
                         Active
                       </span>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      Admin
-                    </td>
+                    
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <!-- <a--
                         href="#"
@@ -202,8 +197,8 @@
                 </tbody>
               </table>
             </div>
-             <div class="mt-20 flex flex-1 justify-center flex-col items-center" v-if="this.employees.length===0"><img src="../assets/nodata.gif" class="w-64" alt=""><h1 class="text-2xl font-bold mt-5 tracking-wide">No data to Display</h1>
-             <p class="font-medium text-sm text-gray-500 tracking-tight">Please add a client</p></div>
+             <div class="mt-20 flex flex-1 justify-center flex-col items-center" v-if="this.employees.length===0"><img src="../assets/nodata.gif" class="w-64 rounded-full shadow-lg" alt=""><h1 class="text-2xl font-bold mt-5 tracking-wide">No data to Display</h1>
+             <p class="font-medium text-sm text-red-400 tracking-tight">Please add a User</p></div>
           </div>
          
           
@@ -253,10 +248,11 @@
 import axios from "axios";
 //import json from "./clients.json";
 import modal from "./modal.vue";
+import navbar from "./navbar.vue"
 import editmodal from "./editmodal.vue";
-import sidebar from "./sidebar.vue";
+//import sidebar from "./sidebar.vue";
 export default {
-  components: { modal, sidebar, editmodal },
+  components: { modal, editmodal, navbar },
   data() {
     return {
       // make: "",
@@ -284,9 +280,7 @@ export default {
   methods: {
     newClient: function () {
       this.firstName = this.lastName = this.email = this.role = this.department = "";
-      setTimeout(() => {
-        this.showmodal = true;
-      }, 1000);
+      this.showmodal=true;
     },
     addClient: function () {
       if (

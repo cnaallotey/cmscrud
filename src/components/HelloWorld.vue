@@ -18,14 +18,14 @@
       <div class="w-full bg-white p-5 py-5 md:py-10 md:p-10 flex space-y-5 shadow-lg flex-col md:flex-row md:space-y-0 md md:space-x-5">
         <div class="relative">
           <select
-            class="appearance-none h-full rounded-r border sm:rounded-r-none block w-full  bg-gray-300 text-gray-700 py-4 px-4 pr-8 leading-tight focus:outline-none focus:border-r focus:border-gray-500"
+            class="appearance-none h-full border sm:rounded-r-none block w-full  bg-gray-300 text-gray-700 py-4 px-4 pr-8 leading-tight focus:outline-none focus:border-gray-500"
           >
             <option>All</option>
             <option>Active</option>
             <option>Inactive</option>
           </select>
           <div
-            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 py-4 text-gray-700"
+            class="pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 py-4 text-gray-700"
           >
             <svg
               class="fill-current h-4 w-4"

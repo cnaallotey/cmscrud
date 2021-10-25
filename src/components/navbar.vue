@@ -4,7 +4,7 @@
       <!-- navbar -->
     <nav class="flex justify-between bg-gray-900 text-white">
       <div class="px-5 md:px-5 xl:px-0 py-6 flex w-full items-center max-w-screen-xl mx-auto">
-        <a class="text-3xl font-bold font-heading" href="#">
+        <a class="text-3xl font-bold font-heading text-yellow-500" href="#">
           <!-- <img class="h-9" src="logo.png" alt="logo"> -->
           CMS.
         </a>
@@ -27,8 +27,8 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
 </svg>
             <span class="flex absolute -mt-5 ml-4">
-              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-yellow-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500">
                 </span>
               </span>
           </a>
@@ -47,8 +47,8 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
 </svg>
         <span class="flex absolute -mt-5 ml-4">
-          <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+          <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-yellow-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500">
           </span>
         </span>
       </a>

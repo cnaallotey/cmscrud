@@ -15,17 +15,17 @@
         </div>
       </div>
 
-      <div class="w-full bg-white p-5 py-5 md:py-10 md:p-10 flex space-y-5 shadow-lg flex-col md:flex-row md:space-y-0 md md:space-x-5">
+      <div class="w-full bg-white p-5 py-5 md:py-10 md:p-10 flex space-y-5 flex-col md:flex-row md:space-y-0 md md:space-x-5">
         <div class="relative">
           <select
-            class="appearance-none h-full border sm:rounded-r-none block w-full  bg-gray-300 text-gray-700 py-4 px-4 pr-8 leading-tight focus:outline-none focus:border-gray-500"
+            class="appearance-none h-full border sm:rounded-r-none block w-full  bg-gray-200 text-gray-700 py-2 px-2 pr-8 md:pr-4 leading-tight focus:outline-none focus:border-gray-500"
           >
             <option>All</option>
             <option>Active</option>
             <option>Inactive</option>
           </select>
           <div
-            class="pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 py-4 text-gray-700"
+            class="pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 py-2  text-gray-700"
           >
             <svg
               class="fill-current h-4 w-4"
@@ -38,7 +38,7 @@
             </svg>
           </div>
         </div>
-        <div class="flex flex-1 border bg-gray-300 items-center p-2 py-4">
+        <div class="flex flex-1 border bg-gray-200 items-center p-2 py-2">
           <svg
             class="fill-current text-gray-800 mr-2 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -54,12 +54,12 @@
           <input
             type="text"
             placeholder="Search users"
-            class="bg-gray-300 max-w-full focus:outline-none text-gray-700"
+            class="bg-gray-200 max-w-full focus:outline-none text-gray-700"
             v-model="search"
           />
         </div>
         <button
-          class="bg-blue-600 hover:bg-blue-800 text-white font-medium py-4 px-4 flex items-center justify-center hover:shadow-md"
+          class="bg-blue-600 hover:bg-yellow-600 text-white font-medium py-2 px-4 flex items-center justify-center hover:shadow-md"
           @click="newClient()"
         >
           Add new user
@@ -235,6 +235,7 @@
             @changeEmail="childEmail"
             @changeRole="childRole" 
             @changeDepartment="childDep"
+            @editmodal="editm"
             
 
           ></editmodal>
@@ -293,7 +294,7 @@ export default {
         this.error = true;
       } else {
         axios
-          .post("/client", {
+          .post("http://localhost:3000/client", {
             Name: { firstName: this.firstName, lastName: this.lastName },
             department: this.department,
             email: this.email,
@@ -330,7 +331,7 @@ export default {
 
     editClient: function (clientId) {
       axios
-        .get("/client/editclient/" + clientId)
+        .get("http://localhost:3000/client/editclient/" + clientId)
         .then((response) => {
           console.log(response.data);
           const update = response.data;
@@ -348,7 +349,7 @@ export default {
       // this.employees = this.employees.filter((item) => item.id !== employee.id);
     },
     updateClient: function () {
-      axios.put("/client/updateclient/" + this.id, {
+      axios.put("http://localhost:3000/client/updateclient/" + this.id, {
         firstName: this.firstName,
         lastName: this.lastName,
         role: this.role,
@@ -362,7 +363,7 @@ export default {
     },
     toggleEditModal: function () {},
     deleteClient: function (clientId) {
-      axios.delete("/client/" + clientId).then((response) => {
+      axios.delete("http://localhost:3000/client/" + clientId).then((response) => {
         console.log(response.data);
         location.reload();
       });
@@ -383,12 +384,15 @@ export default {
     childDep: function (value) {
       this.department = value;
     },
+    editm: function(value){
+      this.editmodal=value
+    }
   },
 
   mounted() {
     axios
       //load all employees
-      .get("/loadclient")
+      .get("http://localhost:3000/loadclient")
       .then((res) => (this.employees = res.data))
       .catch((err) => console.log(err));
   },

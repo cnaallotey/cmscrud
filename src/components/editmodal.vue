@@ -21,7 +21,8 @@
         To: "opacity-0"
     -->
         <div
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          class="fixed inset-0 bg-gray-500 bg-opacity-25 md:bg-opacity-75 transition-opacity "
+          @click="$emit('editmodal', false)"
           aria-hidden="true"
         ></div>
 
@@ -43,16 +44,16 @@
         To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     -->
         <div
-          class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+          class="inline-block align-bottom z-20 bg-white text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm "
         >
-          <form action="" class="form bg-white p-6 my-10 relative">
+          <form action="" class="form bg-white p-6 relative">
             <div
               class="icon bg-blue-600 text-white w-6 h-6 absolute flex items-center justify-center p-5"
               style="left: -40px"
             >
               <i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i>
             </div>
-            <h3 class="text-2xl text-gray-900 font-semibold">Edit User</h3>
+            <h3 class="text-2xl text-gray-900 font-semibold text-center">Edit User</h3>
             <div class="flex space-x-5 mt-3">
               <input
                 type="text"
@@ -111,7 +112,7 @@
             <input
               type="submit"
               value="Submit"
-              class="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3"
+              class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3"
               @click.prevent="updateClient()"
             />
           </form>

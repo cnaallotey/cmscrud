@@ -21,7 +21,7 @@
         To: "opacity-0"
     -->
         <div
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          class="fixed inset-0 bg-gray-500 bg-opacity-30 md:bg-opacity-50 transition-opacity"
           @click="toggleModal"
           aria-hidden="true"
         ></div>
@@ -44,12 +44,12 @@
         To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     -->
         <div
-          class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+          class="inline-block align-bottom bg-white z-20 text-left overflow-hidden shadow-xl transform transition-all sm:my-5 sm:align-middle max-w-sm "
         >
           <form
             action="http://localhost:8081/client"
             method="POST"
-            class="form bg-white p-6 my-10 relative"
+            class="form bg-white p-6 relative"
           >
             <div
               class="icon bg-blue-600 text-white w-6 h-6 absolute flex items-center justify-center p-5"
@@ -57,7 +57,7 @@
             >
               <i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i>
             </div>
-            <h3 class="text-2xl text-gray-900 font-semibold">Add a new User</h3>
+            <h3 class="text-2xl text-gray-900 font-semibold text-center ">Add a new User</h3>
             <div class="flex space-x-5 mt-3">
               <input
                 type="text"
@@ -115,13 +115,13 @@
             <input
               type="submit"
               value="Submit"
-              class="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3"
+              class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium p-3"
               @click.prevent="addClient()"
             />
           </form>
         </div>
       </div>
-      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"></div>
+      
     </div>
   </div>
 </template>

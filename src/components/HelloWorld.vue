@@ -54,12 +54,12 @@
           <input
             type="text"
             placeholder="Search Clients"
-            class="bg-gray-200 max-w-full focus:outline-none text-gray-700"
+            class="bg-gray-200 max-w-full focus:outline-none text-gray-700 flex flex-1"
             v-model="search"
           />
         </div>
         <button
-          class="bg-blue-600 hover:bg-yellow-600 text-white font-medium py-2 px-4 flex items-center justify-center hover:shadow-md"
+          class="bg-blue-600 hover:bg-blue-800 text-white font-medium py-2 px-4 flex items-center justify-center hover:shadow-md"
           @click="newClient()"
         >
           Add new client
@@ -401,7 +401,8 @@ export default {
   computed: {
     searchEmployees() {
       return this.employees.filter((employee) => {
-        return employee.Name.firstName.match(this.search);
+        return ((employee.Name.firstName).toLowerCase()).match((this.search).toLowerCase());
+        //return employee.Name.firstName === this.search
       });
     },
   },

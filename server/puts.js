@@ -13,6 +13,7 @@ router.put('/client/updateclient/:id', (req, res) => {
     data[found].email= req.body.email;
     data[found].role = req.body.role;
     data[found].department = req.body.department;
+    res.send(data);
 
 })
 

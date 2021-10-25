@@ -126,7 +126,6 @@
 <script>
 export default {
   props: {
-    pushUser: { type: Function },
     updateClient: { type: Function },
     error: { type: Boolean },
     editmodal: { type: Boolean },

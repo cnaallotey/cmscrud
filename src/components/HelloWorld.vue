@@ -303,13 +303,12 @@ export default {
             id: Math.floor(Math.random() * 100).toString(),
           })
           .then((res) => {
-            console.log(res.data);
+            this.employees=res.data
           });
 
         this.firstName = this.lastName = this.email = this.role = this.department = "";
         this.error = false;
-        this.editmodal = false;
-        location.reload();
+        this.showmodal = false;
         // setTimeout(() => {
         //   this.showmodal = false;
         // }, 1000);
@@ -355,8 +354,10 @@ export default {
         role: this.role,
         email: this.email,
         department: this.department,
-      });
-      location.reload();
+      }).then((res) => {
+            this.employees=res.data
+          });
+         this.editmodal=false;
     },
     toggleModal: function () {
       this.showmodal = false;
@@ -364,8 +365,8 @@ export default {
     toggleEditModal: function () {},
     deleteClient: function (clientId) {
       axios.delete("/client/" + clientId).then((response) => {
-        console.log(response.data);
-        location.reload();
+        this.employees=response.data
+        
       });
     },
     childFirst: function (value) {

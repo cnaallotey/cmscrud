@@ -11,7 +11,7 @@ router.delete('/client/:id', (req, res) => {
     
     data = data.filter(i => i.id !== query);
     //console.log(data)
-    res.send("client has been deleted");
+    res.send(data);
     //console.log("client has been deleted");
 
 

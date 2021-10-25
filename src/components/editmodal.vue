@@ -53,7 +53,7 @@
             >
               <i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i>
             </div>
-            <h3 class="text-2xl text-gray-900 font-semibold text-center">Edit User</h3>
+            <h3 class="text-2xl text-gray-900 font-semibold text-center">Edit Client</h3>
             <div class="flex space-x-5 mt-3">
               <input
                 type="text"

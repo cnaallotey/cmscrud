@@ -98,10 +98,29 @@
               name=""
               id=""
               placeholder="Role"
-              class="border p-2 w-full mt-3"
+              class="border p-2 w-full mt-3 mb-1"
               v-model="role"
               @change="$emit('changeRole', $event.target.value)"
             />
+            <div class="flex items-center">
+            <div @click="$emit('changeactive', !active )"
+            class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in"
+    >
+        <input
+                type="checkbox"
+                name="toggle"
+                id="toggle"
+                class="bg-white border-gray-300 mr-1 mt-2  focus:ring-transparent toggle-checkbox absolute block w-6 h-6 rounded-full border-2 appearance-none cursor-pointer"
+                :class="[active ? 'ml-6' : 'ml-1']"
+        />
+        <label
+                for="toggle"
+                class="toggle-label block h-6 ml-1 mt-2 rounded-full  cursor-pointer"
+                :class="[active ? 'bg-blue-600' : 'bg-gray-300']"
+        ></label>
+        
+    </div><p class="ml-3 pt-2" v-if="active">Activated</p><p class="ml-3 pt-2" v-if="!active">Deactivated   
+  </p></div>
             <div class="mt-4">
               <p class="text-xs font-normal text-red-500" v-if="error">
                 Please fill all spaces
@@ -135,6 +154,7 @@ export default {
     department: { type: String },
     role: { type: String },
     email: { type: String },
+    active:{type: Boolean},
     id: { type: String },
   },
   data() {

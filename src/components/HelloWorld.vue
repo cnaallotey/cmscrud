@@ -15,14 +15,15 @@
         </div>
       </div>
 
-      <div class="w-full bg-white p-5 py-5 md:py-10 md:p-10 flex space-y-5 flex-col md:flex-row md:space-y-0 md md:space-x-5">
-        <div class="relative">
+      <div class="w-full  bg-white p-5 py-5 md:py-10 md:p-10 flex space-y-5 flex-col md:flex-row md:space-y-0 md md:space-x-5">
+        <div class="relative md:w-32">
           <select
+          v-model="selectSearch"
             class="appearance-none h-full border sm:rounded-r-none block w-full  bg-gray-200 text-gray-700 py-2 px-2 pr-8 md:pr-4 leading-tight focus:outline-none focus:border-gray-500"
           >
-            <option>All</option>
-            <option>Active</option>
-            <option>Inactive</option>
+            <option value="">All</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
           </select>
           <div
             class="pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 py-2  text-gray-700"
@@ -114,6 +115,7 @@
                     v-for="employee in searchEmployees"
                     :key="employee.id"
                     class="hover:bg-blue-50"
+                    :class="[employee.active ? 'opacity-100' : 'opacity-20']"
                   >
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="flex items-center">
@@ -144,9 +146,16 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                       <span
+                      v-if="employee.active"
                         class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
                       >
                         Active
+                      </span>
+                      <span
+                      v-if="!employee.active"
+                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800"
+                      >
+                        Inactive
                       </span>
                     </td>
                     
@@ -220,13 +229,14 @@
           ></modal>
           <editmodal
             v-if="editmodal"
-            :pushUser="pushUser"
+            
             :error="error"
             :firstName="firstName"
             :lastName="lastName"
             :role="role"
             :department="department"
             :email="email"
+            :active="active"
             :id="id"
             :editClient="editClient"
             :updateClient="updateClient"
@@ -236,9 +246,11 @@
             @changeRole="childRole" 
             @changeDepartment="childDep"
             @editmodal="editm"
+            @changeactive="childactive"
             
 
           ></editmodal>
+
           </div>
       </div>
     </div>
@@ -265,12 +277,14 @@ export default {
      
       showmodal: false,
       editmodal: false,
+      selectSearch:"",
       employees: [],
       firstName: "",
       lastName: "",
       email: "",
       role: "",
       department: "",
+      active:true,
       id: "",
       fromchild: "",
       error: false,
@@ -299,7 +313,8 @@ export default {
             department: this.department,
             email: this.email,
             role: this.role,
-            status: "active",
+            active: this.active,
+            status:"active",
             id: Math.floor(Math.random() * 100).toString(),
           })
           .then((res) => {
@@ -332,13 +347,14 @@ export default {
       axios
         .get("/client/editclient/" + clientId)
         .then((response) => {
-          console.log(response.data);
+          //console.log(response.data);
           const update = response.data;
           this.id = clientId;
           this.editmodal = true;
           this.firstName = update[0].Name.firstName;
           this.lastName = update[0].Name.lastName;
           this.role = update[0].role;
+          this.active= update[0].active;
           this.department = update[0].department;
           this.email = update[0].email;
         })
@@ -353,6 +369,7 @@ export default {
         lastName: this.lastName,
         role: this.role,
         email: this.email,
+        active: this.active,
         department: this.department,
       }).then((res) => {
             this.employees=res.data
@@ -387,6 +404,9 @@ export default {
     },
     editm: function(value){
       this.editmodal=value
+    },
+    childactive: function(value){
+      this.active=value
     }
   },
 
@@ -401,7 +421,7 @@ export default {
   computed: {
     searchEmployees() {
       return this.employees.filter((employee) => {
-        return ((employee.Name.firstName).toLowerCase()).match((this.search).toLowerCase());
+        return (((employee.Name.firstName).toLowerCase()).match((this.search).toLowerCase()) && (employee.status).match(this.selectSearch));
         //return employee.Name.firstName === this.search
       });
     },

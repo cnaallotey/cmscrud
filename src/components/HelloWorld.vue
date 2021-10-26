@@ -295,6 +295,7 @@ export default {
   methods: {
     newClient: function () {
       this.firstName = this.lastName = this.email = this.role = this.department = "";
+      this.active=true;
       this.showmodal=true;
     },
     addClient: function () {

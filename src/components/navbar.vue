@@ -84,7 +84,14 @@
           </div>
         </div>
         <!-- Responsive navbar -->
-        <a class="xl:hidden flex mr-6 items-center" href="#">
+        <a
+          href="https://github.com/cnaallotey/cmscrud"
+          target="_blank"
+          class="flex xl:hidden items-center mr-4 p-2 rounded-md bg-black bg-opacity-0 hover:bg-opacity-80 transition ease-out select-none delay-100"
+          ><img src="../assets/github.svg" class="w-10 h-10 mr-1" alt="github" />
+        </a>
+
+        <a class="hidden mr-6 items-center" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"

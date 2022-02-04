@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router()
 //const cors = require('cors')
-data = require('./client.json')
-
+const data = require('./client.json')
 
 
 router.post('/client', (req, res) => {
